@@ -64,7 +64,7 @@ console.log (Math.round(temperatureCtoF(24)));
  * ### Challenge `temperatureInF`
  * 
  * @instructions
- * This function should take an a temperature and a unit (either 'F' or 'C') as arguments,
+ * This function should take a temperature and a unit (either 'F' or 'C') as arguments,
  * and return the temperature in fahrenheit, rounded to the nearest whole number. 
  * 
  * For example, if we invoke `temperatureInF`
@@ -77,14 +77,20 @@ console.log (Math.round(temperatureCtoF(24)));
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(temperature, unit) {
+function temperatureCtoF(celsius) {
+  return celsius * (9/5) + 32
+
+}
+(Math.round(temperatureCtoF(24)));
+
+  function temperatureInF(temperature, unit) {
   if (unit === 'F') {
-    console.log (temperatureInF());
+    console.log (`${temperature}F`);
   } else {
     console.log (Math.round(temperatureCtoF(temperature)));
   }
 }
-temperatureInF(85 'F');
+temperatureInF(24, 'C');
 
 
 /**
@@ -102,9 +108,18 @@ temperatureInF(85 'F');
  *   name: "Leia",
  *   email: "leia@leia.com",
  * }
-*/
+
+ assign variable to object values (other way around) input them as arguments. 
+
+ */
+let Person = {
+    name:null,
+    id:null,
+    email:me@menubar.me,
+  }
+  console.log(Person)
 function makePersonObject(name, ID, email) {
-  return let Person {
+  return {
     name:test,
     id:test,
     email:test,
@@ -114,7 +129,9 @@ function makePersonObject(name, ID, email) {
   // Person.email =  
   /* code here */
 }
-nameOfObject.nameOfKey
+makePersonObject()
+
+
 /**
  * ### Challenge `getName`
  * 
@@ -148,11 +165,13 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex({}) {
-  for (i=0; i<appleIndex.length; i++)
+
+
+function appleIndex(Fruit) {
+  for (i=0; i<Fruit.length; i++)
 }
-  if (i='apple') {
-    console.log(appleIndex[i])
+  if ([i] === 'apple') {
+    return(appleIndex[i])
   }
 appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'])
 
@@ -171,10 +190,15 @@ appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'])
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(Fruit) {
+  if (isItAnApple[i] === 'apple' {
+    isItAnApple[i] = true
+  } else {
+    isItAnApple[i] = false
+  }
 }
 
+//Try append if my amazing plan doesnt work at the end return dont print
 
 
 /*
@@ -230,10 +254,11 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  for (let i = 0; i<inventory.length; i++) {
-    
+  
+console.log(`This is a {car_make} {car_model}`)
   }
 }
+getCarInfoByIndex(inventory[0], 0)
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -247,7 +272,7 @@ function getCarInfoByIndex(inventory, index) {
  * it will return `This is a Lincoln Town Car`.
 */
 function getLastCarInfo(/* code here */) {
-  /* code here */
+  for (let i = 0; i<inventory.length; i++) {
 }
 
 /**

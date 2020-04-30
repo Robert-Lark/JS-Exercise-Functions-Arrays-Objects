@@ -35,9 +35,11 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
+function sayGoodbye(name) {
+  console.log(`Goodbye, ${name}. Have a great day.`)
   /* code here */
 }
+sayGoodbye('Andy');
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -53,10 +55,11 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
-}
+function temperatureCtoF(celsius) {
+  return celsius * (9/5) + 32
 
+}
+console.log (Math.round(temperatureCtoF(24)));
 /**
  * ### Challenge `temperatureInF`
  * 
@@ -74,9 +77,14 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
+function temperatureInF(temperature, unit) {
+  if (unit === 'F') {
+    console.log (temperatureInF());
+  } else {
+    console.log (Math.round(temperatureCtoF(temperature)));
+  }
 }
+temperatureInF(85 'F');
 
 
 /**
@@ -95,10 +103,18 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
+function makePersonObject(name, ID, email) {
+  return let Person {
+    name:test,
+    id:test,
+    email:test,
+  }
+  // Person.name =
+  // Person.id = 
+  // Person.email =  
   /* code here */
 }
-
+nameOfObject.nameOfKey
 /**
  * ### Challenge `getName`
  * 
@@ -132,9 +148,13 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex({}) {
+  for (i=0; i<appleIndex.length; i++)
 }
+  if (i='apple') {
+    console.log(appleIndex[i])
+  }
+appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'])
 
 /**
  * ### Challenge `isItAnApple`
@@ -210,7 +230,9 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
+  for (let i = 0; i<inventory.length; i++) {
+    
+  }
 }
 
 /**

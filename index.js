@@ -35,9 +35,10 @@ function addNumbers(num1, num2) {
  * the returned value should look like: 'Goodbye, Andy. Have a great day.'
  * 
 */
-function sayGoodbye(/* code here */) {
-  /* code here */
+function sayGoodbye(name) {
+  console.log(`Goodbye, ${name}. Have a great day.`)
 }
+sayGoodbye('Andy');
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -53,9 +54,11 @@ function sayGoodbye(/* code here */) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
-  /* code here */
+function temperatureCtoF(celsius) {
+  return celsius * (9/5) + 32
+
 }
+console.log (Math.round(temperatureCtoF(24)));
 
 /**
  * ### Challenge `temperatureInF`
@@ -74,10 +77,20 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
-  /* code here */
-}
+function temperatureCtoF(celsius) {
+  return celsius * (9/5) + 32
 
+}
+(Math.round(temperatureCtoF(24)));
+
+  function temperatureInF(temperature, unit) {
+  if (unit === 'F') {
+    console.log (`${temperature}F`);
+  } else {
+    console.log (Math.round(temperatureCtoF(temperature)) + "C");
+  }
+}
+temperatureInF(24, 'C');
 
 /**
  * ### Challenge `makePersonObject`
@@ -95,10 +108,19 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
-}
+let name = "Leia";
+let id = 5;
+let email = "leia@leia.com";
 
+
+function makePersonObject(name, id, email) {
+return {
+name:name,
+id:id,
+email:email,
+}
+}
+makePersonObject(name, id, email)
 /**
  * ### Challenge `getName`
  * 
@@ -132,9 +154,14 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
-  /* code here */
+function appleIndex(Fruit) {
+  for (i=0; i<Fruit.length; i++)
 }
+  if ([i] === 'apple') {
+    return(appleIndex[i])
+  }
+appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'])
+
 
 /**
  * ### Challenge `isItAnApple`
@@ -151,8 +178,12 @@ function appleIndex(/* code here */) {
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(Fruit) {
+  if (isItAnApple[i] === 'apple' {
+    isItAnApple[i] = true
+  } else {
+    isItAnApple[i] = false
+  }
 }
 
 
@@ -210,8 +241,11 @@ function get3rdCar(inventory) {
  * it will return `This is a Lincoln Navigator`.
 */
 function getCarInfoByIndex(inventory, index) {
-  /* code here */
-}
+  
+  console.log(`This is a {car_make} {car_model}`)
+    }
+  }
+  getCarInfoByIndex(inventory[0], 0)
 
 /**
  * ### Challenge `getLastCarInfo`
@@ -224,9 +258,16 @@ function getCarInfoByIndex(inventory, index) {
  * For example, if getLastCarInfo is invoked passing the inventory inside /data/inventory.js,
  * it will return `This is a Lincoln Town Car`.
 */
-function getLastCarInfo(/* code here */) {
-  /* code here */
-}
+function getLastCarInfo(inventory) {
+
+  const index = inventory.length - 1
+  
+  let last = inventory[index];
+  
+  return `This is a ${last.car_make} ${last.car_model}`
+  }
+  
+  getLastCarInfo(inventory);
 
 /**
  * ### Challenge `getModelYears`
@@ -237,9 +278,18 @@ function getLastCarInfo(/* code here */) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
-function getModelYears(/* code here */) {
-  /* code here */
+function getModelYears(inventory) {
+  let cart = []; 
+ for (let index in inventory) {
+let info = inventory[index];
+
+cart.push(info.car_year)
 }
+
+return cart
+
+}
+(getModelYears(inventory));
 
 /**
  * ### Challenge `getCarInfoById`

@@ -87,7 +87,7 @@ function temperatureCtoF(celsius) {
   if (unit === 'F') {
     console.log (`${temperature}F`);
   } else {
-    console.log (Math.round(temperatureCtoF(temperature)) + "C");
+    console.log (Math.round(temperatureCtoF(temperature)) + "F");
   }
 }
 temperatureInF(24, 'C');
@@ -108,6 +108,19 @@ temperatureInF(24, 'C');
  *   email: "leia@leia.com",
  * }
 */
+
+function makePersonObject(id, name, email) {
+  let person = {
+ id:id,
+ name:name,
+ email:email,
+ }
+ return person
+ }
+ makePersonObject(5, 'Leia', "leia@leia.com");
+
+ /// OR
+
 let name = "Leia";
 let id = 5;
 let email = "leia@leia.com";
@@ -134,9 +147,16 @@ makePersonObject(name, id, email)
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
-  /* code here */
+function getName(name) {
+  const person = {
+    id: 1,
+    name: 'Leia',
+    email: 'leia@leia.com'
+  }
+  return `Hello, my name is ${person.name}`
 }
+
+getName({ id: 1, name: 'Leia', email: 'leia@leia.com'})
 
 
 /**
@@ -154,13 +174,17 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
+
+
 function appleIndex(Fruit) {
-  for (i=0; i<Fruit.length; i++)
-}
-  if ([i] === 'apple') {
-    return(appleIndex[i])
+  for (i=0; i<Fruit.length; i++){
+
+  if (Fruit[i] === 'apple') {
+    return([i])
   }
-appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'])
+  }
+}
+  appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'];);
 
 
 /**
@@ -178,13 +202,21 @@ appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'])
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
+let Fruit = [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]
+
+
 function isItAnApple(Fruit) {
-  if (isItAnApple[i] === 'apple' {
-    isItAnApple[i] = true
+  let newArr = []
+  for (i=0; i<Fruit.length; i++){
+  if (Fruit[i] === 'apple') {
+    newArr.push(true)
   } else {
-    isItAnApple[i] = false
+    newArr.push(false)
   }
 }
+  console.log(newArr)
+}
+isItAnApple(Fruit);
 
 
 
@@ -240,13 +272,22 @@ function get3rdCar(inventory) {
  * For example, if getCarInfoByIndex is invoked with the inventory and the number 0,
  * it will return `This is a Lincoln Navigator`.
 */
+
 function getCarInfoByIndex(inventory, index) {
   
-  console.log(`This is a {car_make} {car_model}`)
+  console.log(`This is a ${inventory.car_make} ${inventory.car_model}`)
     }
-  }
-  getCarInfoByIndex(inventory[0], 0)
+  
+  getCarInfoByIndex([0], 0)
 
+///IN REPLIT AFTER INVENTORY HAS BEEN IMPORTED
+
+function getCarInfoByIndex(inventory, index) {
+  
+console.log(`This is a ${inventory.car_make} ${inventory.car_model}`)
+  }
+
+getCarInfoByIndex(inventory[0], 0)
 /**
  * ### Challenge `getLastCarInfo`
  * 
@@ -266,8 +307,22 @@ function getLastCarInfo(inventory) {
   
   return `This is a ${last.car_make} ${last.car_model}`
   }
-  
-  getLastCarInfo(inventory);
+  getLastCarInfo();
+
+  ///IN REPLIT AFTER INVENTORY HAS BEEN IMPORTED
+
+
+  function getLastCarInfo(inventory) {
+
+    const index = inventory.length - 1
+    
+    let last = inventory[index];
+    
+    return `This is a ${last.car_make} ${last.car_model}`
+    }
+    
+    getLastCarInfo(inventory);
+
 
 /**
  * ### Challenge `getModelYears`
@@ -278,6 +333,21 @@ function getLastCarInfo(inventory) {
  *     (1) an array which is an inventory of cars like the one inside /data/inventory.js.
  * getModelYears returns an array containing all the 'car_year's in the inventory.
 */
+function getModelYears(inventory) {
+  let cart = []; 
+ for (let index in inventory) {
+let info = inventory[index];
+
+cart.push(info.car_year)
+}
+
+return cart
+
+}
+(getModelYears());
+
+///IN REPLIT AFTER INVENTORY HAS BEEN IMPORTED
+
 function getModelYears(inventory) {
   let cart = []; 
  for (let index in inventory) {

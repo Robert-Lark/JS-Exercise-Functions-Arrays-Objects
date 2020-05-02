@@ -177,14 +177,14 @@ getName({ id: 1, name: 'Leia', email: 'leia@leia.com'})
 
 
 function appleIndex(Fruit) {
-  for (i=0; i<Fruit.length; i++){
+  for (let i=0; i<Fruit.length; i++){
 
   if (Fruit[i] === 'apple') {
     return([i])
   }
   }
 }
-  appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango'];);
+  appleIndex([ 'orange', 'grape', 'apple', 'banana', 'mango']);
 
 
 /**
@@ -207,7 +207,7 @@ let Fruit = [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]
 
 function isItAnApple(Fruit) {
   let newArr = []
-  for (i=0; i<Fruit.length; i++){
+  for (let i=0; i<Fruit.length; i++){
   if (Fruit[i] === 'apple') {
     newArr.push(true)
   } else {
@@ -281,13 +281,15 @@ function getCarInfoByIndex(inventory, index) {
   getCarInfoByIndex([0], 0)
 
 ///IN REPLIT AFTER INVENTORY HAS BEEN IMPORTED
-
+/*
 function getCarInfoByIndex(inventory, index) {
   
 console.log(`This is a ${inventory.car_make} ${inventory.car_model}`)
   }
 
 getCarInfoByIndex(inventory[0], 0)
+
+*/
 /**
  * ### Challenge `getLastCarInfo`
  * 
@@ -310,7 +312,7 @@ function getLastCarInfo(inventory) {
   getLastCarInfo();
 
   ///IN REPLIT AFTER INVENTORY HAS BEEN IMPORTED
-
+/*
 
   function getLastCarInfo(inventory) {
 
@@ -322,7 +324,7 @@ function getLastCarInfo(inventory) {
     }
     
     getLastCarInfo(inventory);
-
+*/
 
 /**
  * ### Challenge `getModelYears`
@@ -347,7 +349,7 @@ return cart
 (getModelYears());
 
 ///IN REPLIT AFTER INVENTORY HAS BEEN IMPORTED
-
+/*
 function getModelYears(inventory) {
   let cart = []; 
  for (let index in inventory) {
@@ -360,7 +362,7 @@ return cart
 
 }
 (getModelYears(inventory));
-
+*/
 /**
  * ### Challenge `getCarInfoById`
  *  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER

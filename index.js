@@ -365,10 +365,16 @@ return cart
  * For example, if getCarInfoById is invoked with the inventory and the number 1,
  * it will return `This is a Lincoln Navigator`.
 */
-function getCarInfoById(/* code here */) {
-  /* code here */
-}
 
+function getCarInfoById(inventory, id) {
+  for (let index in inventory) {
+  let ob = (inventory[index]) 
+  if ((ob.id) === id) {
+   return `This is a ${ob.car_make} ${ob.car_model}`
+  }
+  }
+}
+getCarInfoById(  1)
 /**
  * ### Challenge `getOlderCars`
  * * THIS ONE IS A STRETCH GOAL. ATTEMPT IT ONLY AFTER

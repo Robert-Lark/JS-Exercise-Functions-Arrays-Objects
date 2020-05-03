@@ -36,7 +36,7 @@ function addNumbers(num1, num2) {
  * 
 */
 function sayGoodbye(name) {
-  console.log(`Goodbye, ${name}. Have a great day.`)
+  return(`Goodbye, ${name}. Have a great day.`)
 }
 sayGoodbye('Andy');
 
@@ -55,10 +55,10 @@ sayGoodbye('Andy');
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
 function temperatureCtoF(celsius) {
-  return celsius * (9/5) + 32
+  return Math.round(celsius * (9/5) + 32)
 
 }
-console.log (Math.round(temperatureCtoF(24)));
+(temperatureCtoF(24));
 
 /**
  * ### Challenge `temperatureInF`
@@ -77,20 +77,16 @@ console.log (Math.round(temperatureCtoF(24)));
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureCtoF(celsius) {
-  return celsius * (9/5) + 32
-
-}
-(Math.round(temperatureCtoF(24)));
 
   function temperatureInF(temperature, unit) {
   if (unit === 'F') {
-    console.log (`${temperature}F`);
+    return (`${temperature}F`);
   } else {
-    console.log (Math.round(temperatureCtoF(temperature)) + "F");
+    return (Math.round(temperature * (9/5) + 32) + "F");
   }
 }
-temperatureInF(24, 'C');
+temperatureInF(88, 'F');
+
 
 /**
  * ### Challenge `makePersonObject`
@@ -120,7 +116,7 @@ function makePersonObject(id, name, email) {
  makePersonObject(5, 'Leia', "leia@leia.com");
 
  /// OR
-
+/*
 let name = "Leia";
 let id = 5;
 let email = "leia@leia.com";
@@ -134,6 +130,8 @@ email:email,
 }
 }
 makePersonObject(name, id, email)
+*/
+
 /**
  * ### Challenge `getName`
  * 
@@ -147,16 +145,13 @@ makePersonObject(name, id, email)
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(name) {
-  const person = {
-    id: 1,
-    name: 'Leia',
-    email: 'leia@leia.com'
-  }
-  return `Hello, my name is ${person.name}`
-}
 
-getName({ id: 1, name: 'Leia', email: 'leia@leia.com'})
+
+function getName(name) {
+
+  return `Hello, my name is ${name.name}`
+}
+getName({ id: 1, name: 'Leia', email: 'leia@leia.com' })
 
 
 /**
@@ -174,13 +169,11 @@ getName({ id: 1, name: 'Leia', email: 'leia@leia.com'})
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-
-
 function appleIndex(Fruit) {
   for (let i=0; i<Fruit.length; i++){
 
   if (Fruit[i] === 'apple') {
-    return([i])
+    return(i)
   }
   }
 }
@@ -196,15 +189,10 @@ function appleIndex(Fruit) {
  * and returns an array of equal length containing the `true`
  * if the corresponding entry in the original array is 'apple' 
  * and `false` if it is anything else.
- * 
- * 
  * For example, if we invoke `isItAnApple`
  * passing in [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ] as the argument,
  * the returned value should be: [ false, true, false, false, true, false ].
 */
-let Fruit = [ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]
-
-
 function isItAnApple(Fruit) {
   let newArr = []
   for (let i=0; i<Fruit.length; i++){
@@ -214,9 +202,9 @@ function isItAnApple(Fruit) {
     newArr.push(false)
   }
 }
-  console.log(newArr)
+  return(newArr)
 }
-isItAnApple(Fruit);
+isItAnApple([ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]);
 
 
 
@@ -274,11 +262,11 @@ function get3rdCar(inventory) {
 */
 
 function getCarInfoByIndex(inventory, index) {
-  
-  console.log(`This is a ${inventory.car_make} ${inventory.car_model}`)
-    }
-  
-  getCarInfoByIndex([0], 0)
+  const info = inventory[index]
+
+  return `This is a ${info.car_make} ${info.car_model}`
+}
+console.log(getCarInfoByIndex( 3))
 
 ///IN REPLIT AFTER INVENTORY HAS BEEN IMPORTED
 /*
